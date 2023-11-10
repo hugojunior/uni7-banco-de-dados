@@ -1,4 +1,5 @@
 # Normalização de Dados
+![Normalização de Dados](banner.png)
 
 ## Sobre a Normalização
 A normalização é o processo de organização de dados em um banco de dados, que envolve a criação de tabelas e o estabelecimento de relações entre essas tabelas, seguindo regras projetadas para proteger os dados e tornar o banco de dados mais flexível. Isso é alcançado ao eliminar redundâncias e evitar dependências inconsistentes.
@@ -41,3 +42,77 @@ No entanto, existem exceções à aplicação rigorosa da terceira forma normal.
 
 ## Outras formas de normalização
 A quarta forma normal, frequentemente chamada de BCNF (Boyce-Codd Normal Form), e a quinta forma normal são conceitos existentes, mas raramente são aplicados no design prático de bancos de dados. Ignorar essas regras adicionais pode levar a um design de banco de dados que não é perfeito, mas geralmente não afetará significativamente a funcionalidade do sistema.
+
+---
+
+## Normalização de uma tabela de exemplo
+Essas etapas representam o processo de normalização de uma tabela fictícia de alunos.
+
+### 1. Tabela não normalizada:
+
+Estudante# | Orientador | Sala-Orientador | Classe1 | Classe2 | Classe3
+---        | ---        | ---             | ---     | ---     | ---
+1022       | Jones      | 412             | 101-07  | 143-01  | 159-02
+4123       | Smith      | 216             | 101-07  | 143-01  | 179-04
+
+### 2. Primeira Forma Normal: Sem repetições de grupos
+As tabelas devem ter apenas duas dimensões. No caso de um aluno que possui várias classes, essas informações devem ser listadas em uma tabela separada. A presença de campos como Classe1, Classe2 e Classe3 nos registros mencionados indica problemas de design.
+Em planilhas, é comum usar uma terceira dimensão, mas em tabelas de banco de dados, essa abordagem não é apropriada. Uma maneira de abordar esse problema é considerá-lo como uma relação um-para-muitos e evitar a combinação de lados únicos e múltiplos na mesma tabela. Em vez disso, a solução envolve criar outra tabela que esteja na primeira forma normal, eliminando assim a repetição de grupos (**Classe#**), como demonstrado no exemplo a seguir:
+
+Estudante# | Orientador | Sala-Orientador | Classe#
+--         | ---        | ---             | ---
+1022       | Jones      | 412             | 101-07
+1022       | Jones      | 412             | 143-01
+1022       | Jones      | 412             | 159-02
+4123       | Smith      | 216             | 101-07
+4123       | Smith      | 216             | 143-01
+4123       | Smith      | 216             | 179-04
+
+### 3. Segunda Forma Normal: Eliminar a redundância de dados
+Observe os diferentes valores de Classe# para cada valor de Estudante# na tabela acima. Visto que Classe# não depende funcionalmente de Estudante# (a chave primária), essa relação não se encontra na segunda forma normal.
+
+As tabelas a seguir exemplificam a segunda forma normal:
+
+#### Alunos:
+
+Estudante# | Orientador | Sala-Orientador
+---        | ---        | ---
+1022       | Jones      | 412
+4123       | Smith      | 216
+
+#### Matrícula:
+
+Estudante# | Classe#
+---        | ---
+1022       | 101-07
+1022       | 143-01
+1022       | 159-02
+4123       | 101-07
+4123       | 143-01
+4123       | 179-04
+
+### 4. Terceira Forma Normal: Eliminar dados não dependentes da chave
+No exemplo anterior, o atributo Sala-Orientador (número da sala do orientador) é funcionalmente dependente do atributo Orientador. A solução é transferir esse atributo da tabela Alunos para a tabela Orientadores, como ilustrado abaixo:
+
+#### Alunos:
+
+Estudante# | Orientador
+---        | ---
+1022       | Jones
+4123       | Smith
+
+#### Orientadores:
+
+Nome  | Sala | Departamento
+---   | ---  | ---
+Jones | 412  | 42
+Smith | 216  | 42
+
+---
+
+**Referências:**
+- https://learn.microsoft.com/en-us/office/troubleshoot/access/database-normalization-description
+- https://medium.com/blog-do-zouza/modelagem-relacional-uma-vis%C3%A3o-geral-44cd8807fc87
+
+
+
