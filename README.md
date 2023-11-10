@@ -1,5 +1,5 @@
 # Banco de Dados
-Repositório destinado a armazenar e organizar as atividades realizadas durante o semestre 2023.2 da disciplina de Bancos de Dados II na UNI7, sob orientação do professor [Alex Souza](https://github.com/aasouzaconsult).
+Repositório destinado a armazenar e organizar as atividades realizadas durante o semestre 2023.2 da disciplina de Banco de Dados II na UNI7, sob orientação do professor [Alex Souza](https://github.com/aasouzaconsult).
 
 ## Atividades
 - Correção de Consultas
