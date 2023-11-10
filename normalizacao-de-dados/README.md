@@ -109,10 +109,10 @@ Jones | 412  | 42
 Smith | 216  | 42
 
 ---
+**Outros Formatos:**
+- [Google Docs](https://docs.google.com/document/d/1ucwqN3g4vXK136yHhd5schmuiOoo5rXPDxG0pe0JcqM/edit#heading=h.k3fqtido6sed)
 
 **Referências:**
-- https://learn.microsoft.com/en-us/office/troubleshoot/access/database-normalization-description
-- https://medium.com/blog-do-zouza/modelagem-relacional-uma-vis%C3%A3o-geral-44cd8807fc87
-
-
-
+- [Microsoft - Description of the database normalization basics](https://learn.microsoft.com/en-us/office/troubleshoot/access/database-normalization-description)
+- [Zouza's Blog - Modelagem Relacional (uma visão geral)](https://medium.com/blog-do-zouza/modelagem-relacional-uma-vis%C3%A3o-geral-44cd8807fc87)
+  
