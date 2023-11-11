@@ -1,5 +1,5 @@
 # Normalização de Dados
-![Normalização de Dados](banner.png)
+![Normalização de Dados](images/banner.png)
 
 ## Sobre a Normalização
 A normalização é o processo de organização de dados em um banco de dados, que envolve a criação de tabelas e o estabelecimento de relações entre essas tabelas, seguindo regras projetadas para proteger os dados e tornar o banco de dados mais flexível. Isso é alcançado ao eliminar redundâncias e evitar dependências inconsistentes.
