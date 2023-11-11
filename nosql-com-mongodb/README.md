@@ -10,29 +10,29 @@ Aqui vou mostrar o passo a passo da instalação da Community Edition no Pop!_OS
 1. Importe a chave pública usada pelo sistema de gerenciamento de pacotes
     - Em um terminal, instale o gnupg e o curl se eles ainda não estiverem disponíveis
 
-        ```sh
+        ```console
         sudo apt-get install gnupg curl
         ```
     - Para importar a chave GPG pública do MongoDB execute o seguinte comando:
-        ```sh
+        ```console
         curl -fsSL https://pgp.mongodb.com/server-7.0.asc | \
         sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
         --dearmor
         ```
 2. Crie um arquivo de lista para MongoDB
-    ```sh
+    ```console
     echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
     ```
 3. Atualizar pacotes locais
-    ```sh
+    ```console
     sudo apt-get update
     ```
 4. Instale os pacotes MongoDB
-    ```sh
+    ```console
     sudo apt-get install -y mongodb-org
     ```
 5. Checando a instalação
-    ```sh
+    ```console
     mongod –version
     ```
 ![Mostrando versão do MongoDB](images/img-01.png)
@@ -40,7 +40,7 @@ Aqui vou mostrar o passo a passo da instalação da Community Edition no Pop!_OS
 ## Iniciando o serviço
 Para iniciar o serviço, utilize o comando abaixo, substituindo '\<diretório\>' pela pasta do sistema onde seu banco de dados deve ser armazenado:
 
-```sh
+```console
 mongod --dbpath <diretório>
 ```
 ![Iniciando o serviço em um diretório](images/img-02.png)
@@ -50,7 +50,7 @@ mongod --dbpath <diretório>
 ## Acessando o MongoDB
 Para acessar, utilize o seguinte comando no seu terminal:
 
-```sh
+```console
 mongosh
 ```
 ![Acessando o MongoDB pelo comando mongosh](images/img-03.png)
@@ -58,7 +58,7 @@ mongosh
 ## Listando os banco de dados
 Para listar os bancos de dados, é semelhante ao que já conhecemos em bancos de dados relacionais. Você deve executar o seguinte comando:
 
-```mongodb
+```sql
 show databases;
 ```
 ![Listando os bancos de dados](images/img-04.png)
@@ -66,7 +66,7 @@ show databases;
 ## Selecionando um banco de dados
 Para selecionar um banco de dados, é semelhante ao que já conhecemos em bancos de dados relacionais. Você deve executar o seguinte comando:
 
-```mongodb
+```sql
 use <nome-do-banco>;
 ```
 ![Selecionando um banco de dados](images/img-05.png)
@@ -74,7 +74,7 @@ use <nome-do-banco>;
 ## Criando um novo banco de dados
 Para criar um novo banco de dados, basta usar o comando de seleção e, se o banco não existir, ele será criado:
 
-```mongodb
+```sql
 use db-uni7;
 ```
 ![Criando um novo banco](images/img-06.png)
@@ -82,7 +82,7 @@ use db-uni7;
 ## Excluindo um banco de dados
 Para excluir um banco de dados, você deve selecionar o banco de dados e executar o seguinte comando:
 
-```mongodb
+```js
 db.dropDatabase();
 ```
 ![Excluindo um banco](images/img-07.png)
@@ -90,7 +90,7 @@ db.dropDatabase();
 ## Criando uma coleção
 Para criar uma coleção, você basicamente precisa inserir registros.
 
-```mongodb
+```js
 db.professores.insert({
     nome: 'Alex Souza', 
     curso: 'Banco de Dados II', 
@@ -105,7 +105,7 @@ Nesse caso, estou criando uma coleção chamada 'professores'.
 ## Listando as coleções do banco de dados
 Para listar as coleções, selecione o banco e utilize o seguinte comando:
 
-```mongodb
+```sql
 show collections;
 ```
 ![Listando coleções](images/img-09.png)
@@ -113,7 +113,7 @@ show collections;
 ## Selecionado os dados da coleção
 Para listar os dados cadastrados na coleção, você deve utilizar o seguinte comando:
 
-```mongodb
+```js
 db.professores.find();
 ```
 ![Selecionando dados da coleção](images/img-10.png)
@@ -122,7 +122,7 @@ Nesse caso, estou selecionando os dados da coleção de professores, que possui 
 ## Filtrando dados da coleção
 Inicialmente, vamos inserir mais professores na nossa coleção para facilitar a visualização dos filtros:
 
-```mongodb
+```js
 db.professores.insert({
     nome: 'Robério Gomes', 
     curso: 'Sistemas Distribuídos', 
@@ -162,14 +162,14 @@ db.professores.insert({
 ```
 Após inserir os dados, você pode usar o seguinte comando para visualizar a quantidade de registros na coleção:
 
-```mongodb
+```js
 db.professores.countDocuments();
 ```
 ![Contando registros](images/img-11.png)
 
 Para filtrar os dados, você deve fornecer os parâmetros para a função find():
 
-```mongodb
+```js
 db.professores.find({
     ativo: true,
     dataNascimento: {
@@ -183,7 +183,7 @@ Você pode utilizar $gt para representar maior e $lt para representar menor.
 ## Campos específicos por registro
 Ao contrário dos bancos de dados relacionais, no modelo não relacional, podemos adicionar campos em cada registro sem a necessidade de alterar a estrutura da tabela.
 
-```mongodb
+```js
 db.professores.insert({
     nome: 'Commin Nunes', 
     curso: 'Sistemas de Apoio a Decisão', 
@@ -202,7 +202,7 @@ Apesar de ser um banco de dados não relacional, é possível estabelecer relaci
 
 Para ilustrar esse cenário, vamos criar uma segunda coleção chamada 'provas', que armazenará as datas das provas para cada professor:
 
-```mongodb
+```js
 db.provas.insert({data: '2023-12-01', cod_prof: 1});
 db.provas.insert({data: '2023-12-02', cod_prof: 2});
 db.provas.insert({data: '2023-12-01', cod_prof: 3});
@@ -214,7 +214,7 @@ db.provas.insert({data: '2023-12-05', cod_prof: 7});
 
 Agora vamos utilizar o comando para agregar os registros:
 
-```mongodb
+```js
 db.professores.aggregate([
     {
         $lookup: {
