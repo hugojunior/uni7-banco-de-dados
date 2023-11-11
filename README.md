@@ -9,10 +9,10 @@ Repositório destinado a armazenar e organizar as atividades realizadas durante 
 - Atividade Complementar
 - Atividade de Segurança
 - Bancos de Dados Distribuídos
-- Bancos por Tópico
-- [Banco NoSQL com MongoDB](nosql-com-mongodb)
-- [Normalização de Dados](normalizacao-de-dados)
-- [Visualização de Dados](visualizacao-de-dados)
+- [Bancos por Tópico](bancos-por-topico/README.md)
+- [Banco NoSQL com MongoDB](nosql-com-mongodb/README.md)
+- [Normalização de Dados](normalizacao-de-dados/README.md)
+- [Visualização de Dados](visualizacao-de-dados/README.md)
 
 ## Ferramentas Utilizadas
 - [DataGrip](https://www.jetbrains.com/pt-br/datagrip/)
