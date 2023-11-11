@@ -12,6 +12,7 @@ Repositório destinado a armazenar e organizar as atividades realizadas durante 
 - Bancos por Tópico
 - Banco NoSQL com MongoDB
 - [Normalização de Dados](normalizacao-de-dados)
+- [Visualização de Dados](visualizacao-de-dados)
 
 ## Ferramentas Utilizadas
 - [DataGrip](https://www.jetbrains.com/pt-br/datagrip/)
