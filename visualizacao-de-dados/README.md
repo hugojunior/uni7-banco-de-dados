@@ -1,5 +1,4 @@
 # Visualização de Dados
-![Visualização de Dados](images/banner.png)
 
 **Atividade:** Assista [ao vídeo](https://www.youtube.com/watch?v=2VSF4IaF_OE) e reproduza os relatórios gerados utilizando uma ferramenta de visualização de dados, como Power BI, Looker Studio, etc.
 
