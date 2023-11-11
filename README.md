@@ -8,7 +8,7 @@ Repositório destinado a armazenar e organizar as atividades realizadas durante 
 - Gerenciamento de Armazenamento (AV1)
 - Atividade Complementar
 - Atividade de Segurança
-- Bancos de Dados Distribuídos
+- [Bancos de Dados Distribuídos](bancos-de-dados-distribuidos/README.md)
 - [Bancos por Tópico](bancos-por-topico/README.md)
 - [Banco NoSQL com MongoDB](nosql-com-mongodb/README.md)
 - [Normalização de Dados](normalizacao-de-dados/README.md)
