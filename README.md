@@ -6,7 +6,7 @@ Repositório destinado a armazenar e organizar as atividades realizadas durante 
 - Componentes da arquitetura SGBD
 - Resumo do que foi visto
 - Gerenciamento de Armazenamento (AV1)
-- Atividade Complementar
+- [SQL com IA Generativa](sql-com-ia/README.md)
 - [Segurança (Grant/Revoke)](seguranca/README.md)
 - [Bancos de Dados Distribuídos](bancos-de-dados-distribuidos/README.md)
 - [Bancos por Tópico](bancos-por-topico/README.md)
