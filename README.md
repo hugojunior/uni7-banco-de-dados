@@ -3,7 +3,7 @@ Repositório destinado a armazenar e organizar as atividades realizadas durante 
 
 ## Atividades
 - Correção de Consultas
-- Componentes da arquitetura SGBD
+- [Componentes da arquitetura SGBD](componentes-arquitetura-sgbd/README.md)
 - Resumo do que foi visto
 - [Gerenciamento de Armazenamento](gerenciamento-de-armazenamento/README.md) (AV1)
 - [SQL com IA Generativa](sql-com-ia/README.md)
