@@ -15,6 +15,7 @@ Repositório destinado a armazenar e organizar as atividades realizadas durante 
 - [Normalização de Dados](normalizacao-de-dados/README.md)
 - [Visualização de Dados](visualizacao-de-dados/README.md)
 
-## Ferramentas Utilizadas
+## Links úteis
 - [DataGrip](https://www.jetbrains.com/pt-br/datagrip/)
 - [DB Diagram](https://dbdiagram.io/)
+- [Material da Disciplina (privado)](https://github.com/aasouzaconsult/BDII)
