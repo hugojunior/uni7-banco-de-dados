@@ -32,58 +32,59 @@ São bancos de dados que possuem funções específicas e desempenham um papel c
 No SQL Server, os dados são armazenados em unidades chamadas "páginas". Cada página tem um tamanho fixo de 8 KB (kilobytes) por padrão, embora esse valor possa variar dependendo da configuração.
 
 #### Páginas na prática
+
+##### Simulando os limites das páginas de dados
 ![Simulando os limites das páginas de dados](images/img-01.png)
-> Simulando os limites das páginas de dados
 
+##### Simulando uma tabela dentro do limite de 8kb
 ![Simulando uma tabela dentro do limite de 8kb](images/img-02.png)
-> Simulando uma tabela dentro do limite de 8kb
 
+##### Verificando o espaço antes de inserir dados
 ![Verificando o espaço antes de inserir dados](images/img-03.png)
-> Verificando o espaço antes de inserir dados
 
+##### Inserindo dados de teste
 ![Inserindo dados de teste](images/img-04.png)
-> Inserindo dados de teste
 
+##### Verificando o espaço após inserir dados
 ![Verificando o espaço após inserir dados](images/img-05.png)
-> Verificando o espaço após inserir dados
 
 ### Índices no SQL Server
 A indexação é fundamental para otimizar a recuperação de dados em bancos de dados grandes. Os índices são estruturas de dados que permitem que o SQL Server localize rapidamente os registros que atendem a determinadas condições de pesquisa.
 
 #### Índices na prática
+##### Criação da tabela de clientes
 ![Criação da tabela de clientes](images/img-06.png)
-> Criação da tabela de clientes
 
+##### Inserção de dados na tabela
 ![Inserção de dados na tabela](images/img-07.png)
-> Inserção de dados na tabela
 
+##### Criação de índice não clusterizado
 ![Criação de índice não clusterizado](images/img-08.png)
-> Criação de índice não clusterizado
 
+##### Criação de índice único para o campo de e-mail
 ![Criação de índice único para o campo de e-mail](images/img-09.png)
-> Criação de índice único para o campo de e-mail
 
+##### Criação do índice filtrado nos pedidos em aberto
 ![Criação do índice filtrado nos pedidos em aberto](images/img-10.png)
-> Criação do índice filtrado nos pedidos em aberto
 
 #### Fragmentações na prática
+##### Fragmentação de leitura
 ![Fragmentação de leitura](images/img-11.png)
-> Fragmentação de leitura
 
+##### Executando carga de dados e fragmentação
 ![Executando carga de dados e fragmentação](images/img-12.png)
-> Executando carga de dados e fragmentação
 
+##### Consulta de fragmentação
 ![Consulta de fragmentação](images/img-13.png)
-> Consulta de fragmentação
 
+##### Reorganizando índices
 ![Reorganizando índices](images/img-14.png)
-> Reorganizando índices
 
+##### Recriando índices
 ![Recriando índices](images/img-15.png)
-> Recriando índices
 
+##### Consulta de fragmentação após recriar os índices
 ![Consulta de fragmentação após recriar os índices](images/img-16.png)
-> Consulta de fragmentação após recriar os índices
 
 ### Melhores Práticas
 - Backups:
